@@ -20,8 +20,14 @@ include: package:lints/recommended.yaml
 #     - camel_case_types
 
 # analyzer:
-#   exclude:
-#     - path/to/excluded/files/**
+#   errors:
+#     invalid_annotation_target: ignore
+
+analyzer:
+  errors:
+    non_constant_identifier_names: ignore
+  exclude:
+    - "**/*.freezed.dart"
 
 # For more information about the core and recommended set of lints, see
 # https://dart.dev/go/core-lints

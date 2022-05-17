@@ -1,0 +1,41 @@
+{
+   "config": {},
+   "models": {
+      "user": {
+         "id": {
+            "type": "int4",
+            "pk": true,
+            "ai": true
+         },
+         "email": {
+            "type": "varchar"
+         },
+         "username": {
+            "type": "varchar",
+            "length": 21
+         }
+      },
+      "post": {
+         "id": {
+            "type": "int4",
+            "pk": true,
+            "ai": true
+         },
+         "user": {
+            "type": "int",
+            "ref": {
+               "table": "user",
+               "field": "id"
+            }
+         },
+         "content": {
+            "type": "text"
+         },
+         "external_url": {
+            "type": "varchar",
+            "optional": true,
+            "length": 200
+         }
+      }
+   }
+}
